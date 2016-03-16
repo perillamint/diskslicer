@@ -1,0 +1,7 @@
+[package]
+name = "diskslicer"
+version = "0.1.0"
+authors = ["perillamint <perillamint@gentoo.moe>"]
+
+[dependencies]
+libc = "0.2.8"
