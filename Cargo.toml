@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["perillamint <perillamint@gentoo.moe>"]
 
 [dependencies]
-libc = "0.2.8"
+memmap = "0.3.0"
