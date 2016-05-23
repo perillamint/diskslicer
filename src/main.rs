@@ -2,9 +2,9 @@ extern crate memmap;
 
 use std::io::Write;
 
-use gptimage::GPTImage;
+use gpt_table::GPTTable;
 
-mod gptimage;
+mod gpt_table;
 
 fn main() {
     //

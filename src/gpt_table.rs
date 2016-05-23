@@ -1,6 +1,6 @@
 use memmap::{Mmap, Protection};
 
-pub struct GPTImage {
+pub struct GPTTable {
     disk_image: Mmap,
 }
 
@@ -26,8 +26,8 @@ struct GPTHeader {
 
 static GPT_SIGNATURE: [u8; 8] = [0x45, 0x46, 0x49, 0x20, 0x50, 0x41, 0x52, 0x54];
 
-impl GPTImage {
-    fn new(disk_image_filepath: String) -> GPTImage {
+impl GPTTable {
+    fn new(disk_image_filepath: String) -> GPTTable {
         let disk_image = Mmap::open_path(disk_image_filepath,
                                          Protection::Read).unwrap();
 
@@ -40,7 +40,7 @@ impl GPTImage {
 //        image_slice 
         
 
-        GPTImage {
+        GPTTable {
             disk_image: disk_image,
         }
     }
@@ -49,11 +49,11 @@ impl GPTImage {
 #[test]
 #[should_panic]
 fn file_not_found_test() {
-    let gpt_image = GPTImage::new("test_disk_image_not_exist.img".to_string());
+    let gpt_image = GPTTable::new("test_disk_image_not_exist.img".to_string());
 }
 
 #[test]
 fn gpt_image_sanity_check() {
     //TODO: Do sanity check.
-    let gpt_image = GPTImage::new("test_disk_image_gpt.img".to_string());
+    let gpt_image = GPTTable::new("test_disk_image_gpt.img".to_string());
 }
