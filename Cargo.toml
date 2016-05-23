@@ -5,3 +5,4 @@ authors = ["perillamint <perillamint@gentoo.moe>"]
 
 [dependencies]
 memmap = "0.3.0"
+byteorder = "0.5"
